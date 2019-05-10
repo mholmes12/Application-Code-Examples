@@ -1,0 +1,65 @@
+//Megan S. Holmes
+//Krasteva
+//ICS 4U0
+//Feb 12 2019
+//Bank_Account class
+public class Bank_Account
+{
+    //instance variables
+    public long account_num;
+    private String type;
+    private double balance;
+    private float interest_Rate;
+
+    //constructor
+    public Bank_Account (long acct, double bal, String ty, float interest)
+    {
+ account_num = acct;
+ type = ty;
+ balance = bal;
+ interest_Rate = interest;
+    }
+
+
+    //This instance method returns balance in the same variable type.
+    public double getBalance ()
+    {
+ return balance;
+    }
+
+
+    //This instance method returns type in the same variable type.
+    public String getType ()
+    {
+ return type;
+    }
+
+
+    //This instance method deposits and ammount into the bank account.
+    public void deposit (double amt)
+    {
+ balance += amt;
+    }
+
+
+    //this instance method withdraws an ammount and returns true if complete.
+    public boolean withdrawal (double amt)
+    {
+ boolean work = false;
+ if (amt < balance)
+ {
+     balance = balance - amt;
+     work = true;
+ }
+ return work;
+    }
+
+
+    //this instance method applies interest.
+    public void applyInterest ()
+    {
+ balance += balance * interest_Rate;
+    }
+}
+
+
